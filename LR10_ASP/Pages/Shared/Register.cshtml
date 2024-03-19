@@ -1,0 +1,25 @@
+﻿@model ConsultationRegistrationViewModel
+
+<form asp-controller="Consultation" asp-action="Register" method="post">
+    <div>
+        <label>Ім'я прізвище:</label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label>Email:</label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label>Бажана дата консультації:</label>
+        <input asp-for="ConsultationDate" type="date" format="yyyy-MM-dd"/>
+        <span asp-validation-for="ConsultationDate"></span>
+    </div>
+    <div>
+        <label>Оберіть продукт:</label>
+        <select asp-for="SelectedProduct" asp-items="Model.Products"></select>
+        <span asp-validation-for="SelectedProduct"></span>
+    </div>
+    <button type="submit">Зареєструватися</button>
+</form>
